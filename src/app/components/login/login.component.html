@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+<div class="login-box">
+  <div class="alert no-radus alert-primary" role="alert">
+    Log In User
+  </div>
+  <div>
+      <form >
+          <div class="form-group">
+              <label for="exampleInputEmail1">User Name</label>
+              <input type="text" [(ngModel)]="userInput.userName" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter name">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="userInput.password" [ngModelOptions]="{standalone: true}" placeholder="Password">
+          </div>
+          <div class="btn-wrapper">
+              <button type="submit" class="btn btn-primary" (click)="login()">Log In</button>
+              <button type="submit" class="btn btn-primary" (click)="sign()">Sign Up</button>
+          </div>
+      </form>
+  </div>
+</div>
