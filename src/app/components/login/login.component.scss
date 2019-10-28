@@ -11,10 +11,14 @@
     box-sizing: border-box;
 }
 form {
-    padding: 10px 8px 10px 8px;
+    padding: 10px 1.25rem 10px 1.25rem;
 }
 
 .btn-wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+.container {
+    padding: 0;
 }
