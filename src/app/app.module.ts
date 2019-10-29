@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { SearchComponent } from './components/search/search.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ToastrModule } from 'ngx-toastr';
+import { UserManagmentService } from './services/user-managment.service';
+import { BooksManagmentService } from './services/books-managment.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,15 +20,16 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     WishlistComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserManagmentService, BooksManagmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

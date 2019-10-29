@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../../shared-objects/user-objects';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { UserManagmentService } from '../../services/user-managment.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +13,11 @@ import { User } from '../../shared-objects/user-objects';
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
   user: User = new User();
-  constructor() { }
+  constructor(
+    private router: Router,
+    private toastr: ToastrService,
+    private userManage: UserManagmentService
+  ) { }
 
   ngOnInit() {
     this.userForm = new FormGroup({
@@ -22,9 +29,12 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.userForm.valid) {
-      console.log("aa");
+      const name = this.userForm.getRawValue().name;
+      console.log(name);
+      this.userManage.setUserName(name);
+      this.router.navigate(['books']);
     } else {
-      console.log("bb");
+      this.toastr.error('Must have a user name');
     }
   }
 }
