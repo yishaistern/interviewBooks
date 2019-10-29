@@ -9,3 +9,7 @@
     <span (click)="changePage(+1)">+</span>
   </div>
 </div>
+
+<div class="wrap">
+  <app-book *ngFor="let item of books" [book]="item" [isCart]="false"></app-book>
+</div>

@@ -12,12 +12,14 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserManagmentService } from './services/user-managment.service';
 import { BooksManagmentService } from './services/books-managment.service';
+import { BookComponent } from './components/book/book.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SearchComponent,
-    WishlistComponent
+    WishlistComponent,
+    BookComponent
   ],
   imports: [
     BrowserAnimationsModule,

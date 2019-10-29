@@ -36,7 +36,6 @@ export class SearchComponent implements OnInit {
     this.num = 0;
     if (this.query) {
      this.getbooks().subscribe((data) => {
-      console.log(data);
       const totatl = data.totalItems;
       if (totatl % this.bookManage.maxpage === 0) {
         this.maxPages = totatl / this.bookManage.maxpage;
@@ -51,7 +50,6 @@ export class SearchComponent implements OnInit {
   getbooks(): Observable<any> {
       return this.bookManage.getBooksWithVolum(this.query, this.num).pipe(
         map((data) => {
-          console.log(data);
           this.books = data.items;
           return data;
         })
