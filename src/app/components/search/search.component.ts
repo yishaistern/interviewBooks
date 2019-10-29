@@ -26,6 +26,10 @@ export class SearchComponent implements OnInit {
 
   changePage(num: number) {
     const current = this.num + num;
+    if (current > 0 && current <= this.maxPages) {
+      this.num = current;
+      this.getbooks().subscribe((data) => {});
+    }
   }
   searchBooks($event): void {
     this.query = $event.target.value;

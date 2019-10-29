@@ -10,7 +10,7 @@ export class BooksManagmentService {
   maxInPage = 20;
   constructor(private http: HttpClient) { }
   getBooksWithVolum(q: string, page: number = 0): Observable<any> {
-    return this.http.get(this.url + q + '&maxResults=' + this.maxpage + '&startIndex=' + page);
+    return this.http.get(this.url + q + '&maxResults=' + this.maxpage + '&startIndex=' + (page * this.maxpage));
   }
   get maxpage() {
     return this.maxInPage;
