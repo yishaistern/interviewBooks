@@ -19,7 +19,7 @@ export class BooksManagmentService {
   addToCart(book: Book){
     this.map.set(book.id, book);
   }
-  removeBook(id) {
+  removeBook(id: string) {
     this.map.delete(id);
   }
   getBook(id): Book {

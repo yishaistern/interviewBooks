@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../../shared-objects/books-objects';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { BookInfoComponent } from '../book-info/book-info.component';
@@ -12,6 +12,7 @@ import { BooksManagmentService } from '../../services/books-managment.service';
 export class BookComponent implements OnInit {
   @Input() book: Book;
   @Input() isCart: boolean;
+  @Output() remove = new EventEmitter();
   constructor(public dialog: MatDialog, private bookManage: BooksManagmentService) { }
 
   ngOnInit() {
@@ -26,7 +27,11 @@ export class BookComponent implements OnInit {
       data: {book: this.book}
     });
   }
-  addToCart(item: Book) {
-    this.bookManage.addToCart(item);
+  addToCart() {
+    this.bookManage.addToCart(this.book);
+  }
+  removeBook() {
+    this.bookManage.removeBook(this.book.id);
+    this.remove.emit(this.book.id);
   }
 }

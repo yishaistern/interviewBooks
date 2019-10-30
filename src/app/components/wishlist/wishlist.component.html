@@ -1,3 +1,3 @@
-<p>
-  wishlist works!
-</p>
+<div class="wrap">
+    <app-book (remove)="removeFromList(id)" *ngFor="let item of ids" [book]="getbook(item)" [isCart]="true"></app-book>
+  </div>
