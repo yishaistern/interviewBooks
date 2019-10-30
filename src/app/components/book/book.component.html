@@ -1,8 +1,8 @@
 <div class="one-book">
     <div class="title">{{getTitle()}}</div>
     <div class="btns">
-        <button class="bool-btn">Info</button>
-        <button *ngIf="!isCart" class="bool-btn">Add To Cart</button>
-        <button *ngIf="isCart" class="bool-btn">Remove From Cart</button>
+        <button type="button" class="btn btn-info btn-sm" (click)="openDialod()">Info</button>
+        <button *ngIf="!isCart" type="button" class="btn btn-info btn-sm">Add To Cart</button>
+        <button *ngIf="isCart" type="button" class="btn btn-info btn-sm">Remove From Cart</button>
     </div>
 </div>

@@ -10,7 +10,7 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  userNmae: string;
+  userName: string;
   books: Book[] = [];
   num = 0;
   query = '';
@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.userNmae = this.userManage.getUserName();
+    this.userName = this.userManage.getUserName();
   }
 
   changePage(num: number) {

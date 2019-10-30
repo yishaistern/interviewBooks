@@ -1,1 +1,9 @@
-<p>book-info works!</p>
+<div class="wrap">
+    <div class="title">{{title}}</div>
+    <img src="{{thumb}}" />
+    <div class="pages">Has {{pages}} pages</div>
+    <div class="date">Published In: {{publishedDate}}</div>
+    <ul class="auth">
+        <li *ngFor="let item of authers">{{item}}</li>
+    </ul>
+</div>
