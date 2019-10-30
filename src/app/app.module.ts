@@ -13,13 +13,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { UserManagmentService } from './services/user-managment.service';
 import { BooksManagmentService } from './services/books-managment.service';
 import { BookComponent } from './components/book/book.component';
+import { BookInfoComponent } from './components/book-info/book-info.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SearchComponent,
     WishlistComponent,
-    BookComponent
+    BookComponent,
+    BookInfoComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -32,6 +34,9 @@ import { BookComponent } from './components/book/book.component';
     ReactiveFormsModule
   ],
   providers: [UserManagmentService, BooksManagmentService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    BookInfoComponent
+  ]
 })
 export class AppModule { }

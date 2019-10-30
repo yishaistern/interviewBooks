@@ -1,1 +1,8 @@
-<p>book works!</p>
+<div class="one-book">
+    <div class="title">{{getTitle()}}</div>
+    <div class="btns">
+        <button class="bool-btn">Info</button>
+        <button *ngIf="!isCart" class="bool-btn">Add To Cart</button>
+        <button *ngIf="isCart" class="bool-btn">Remove From Cart</button>
+    </div>
+</div>

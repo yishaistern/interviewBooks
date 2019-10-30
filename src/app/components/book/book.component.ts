@@ -14,5 +14,7 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     console.log(this.book);
   }
-
+  getTitle() {
+    return (this.book && this.book.volumeInfo && this.book.volumeInfo.title) ? this.book.volumeInfo.title : '';
+  }
 }
