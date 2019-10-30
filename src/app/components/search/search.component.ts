@@ -28,11 +28,11 @@ export class SearchComponent implements OnInit {
     this.userName = this.userManage.getUserName();
   }
   addToCart() {
-    
+
   }
   changePage(num: number) {
     const current = this.num + num;
-    if (current > 0 && current <= this.maxPages) {
+    if (current >= 0 && current <= this.maxPages) {
       this.num = current;
       this.getbooks().subscribe((data) => {});
     }

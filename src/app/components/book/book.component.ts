@@ -16,7 +16,6 @@ export class BookComponent implements OnInit {
   constructor(public dialog: MatDialog, private bookManage: BooksManagmentService) { }
 
   ngOnInit() {
-    console.log(this.book);
   }
   getTitle() {
     return (this.book && this.book.volumeInfo && this.book.volumeInfo.title) ? this.book.volumeInfo.title : '';

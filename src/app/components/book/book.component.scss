@@ -9,6 +9,8 @@
     border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
+
+
 .title {
     width: 100px;
     overflow: hidden;
@@ -16,7 +18,11 @@
     text-overflow: ellipsis;
     color: #555;
 }
-
+@media screen and (min-width: 600px) {
+    .title {
+        width: 300px;
+    }
+  }
 .btn {
     margin-left: 8px;
 }

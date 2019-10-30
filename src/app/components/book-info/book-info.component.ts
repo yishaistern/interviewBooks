@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Book } from '../../shared-objects/books-objects';
 
 @Component({
@@ -9,7 +9,9 @@ import { Book } from '../../shared-objects/books-objects';
 })
 export class BookInfoComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    public dialogRef: MatDialogRef<BookInfoComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
   book: Book;
   thumb: string;
   pages: number;
@@ -18,12 +20,14 @@ export class BookInfoComponent implements OnInit {
   authers: string[] = [];
   ngOnInit() {
     this.book = this.data.book;
-    console.log(this.book);
     this.thumb = this.book.volumeInfo.imageLinks ? this.book.volumeInfo.imageLinks.smallThumbnail : '';
     this.pages = this.book.volumeInfo.pageCount;
     this.publishedDate = this.book.volumeInfo.publishedDate;
     this.title = this.book.volumeInfo.title;
     this.authers = (this.book.volumeInfo.authors) ? this.book.volumeInfo.authors : [];
+  }
+  close() {
+    this.dialogRef.close();
   }
 
 }

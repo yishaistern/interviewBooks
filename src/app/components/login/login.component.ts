@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.userForm.valid) {
       const name = this.userForm.getRawValue().name;
-      console.log(name);
       this.userManage.setUserName(name);
       this.router.navigate(['books']);
     } else {
