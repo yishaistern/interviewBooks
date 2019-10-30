@@ -3,3 +3,15 @@
     background: #eaeaea;
     min-height: 100wh;
 }
+footer {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 100vw;
+    align-items: center;
+    z-index: 30;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+}
