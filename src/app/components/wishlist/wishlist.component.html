@@ -1,3 +1,6 @@
 <div class="wrap">
-    <app-book (remove)="removeFromList(id)" *ngFor="let item of ids" [book]="getbook(item)" [isCart]="true"></app-book>
+    <app-book (remove)="removeFromList($event)" *ngFor="let item of ids" [book]="getbook(item)" [isCart]="true"></app-book>
   </div>
+  <footer>
+      <button type="button" class="btn btn-info" (click)="navToCart()">Go To Search</button>
+  </footer>
