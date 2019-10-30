@@ -19,7 +19,7 @@ export class BookInfoComponent implements OnInit {
   ngOnInit() {
     this.book = this.data.book;
     console.log(this.book);
-    this.thumb = this.book.volumeInfo.imageLinks.smallThumbnail;
+    this.thumb = this.book.volumeInfo.imageLinks ? this.book.volumeInfo.imageLinks.smallThumbnail : '';
     this.pages = this.book.volumeInfo.pageCount;
     this.publishedDate = this.book.volumeInfo.publishedDate;
     this.title = this.book.volumeInfo.title;

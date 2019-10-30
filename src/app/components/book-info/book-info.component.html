@@ -1,6 +1,6 @@
 <div class="wrap">
     <div class="title">{{title}}</div>
-    <img src="{{thumb}}" />
+    <img src="{{thumb}}" *ngIf="thumb"/>
     <div class="pages">Has {{pages}} pages</div>
     <div class="date">Published In: {{publishedDate}}</div>
     <ul class="auth">
