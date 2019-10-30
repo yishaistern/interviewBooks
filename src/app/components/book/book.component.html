@@ -2,7 +2,7 @@
     <div class="title">{{getTitle()}}</div>
     <div class="btns">
         <button type="button" class="btn btn-info btn-sm" (click)="openDialod()">Info</button>
-        <button *ngIf="!isCart" type="button" class="btn btn-info btn-sm">Add To Cart</button>
+        <button *ngIf="!isCart" type="button" class="btn btn-info btn-sm" (click)="addToCart()">Add To Cart</button>
         <button *ngIf="isCart" type="button" class="btn btn-info btn-sm">Remove From Cart</button>
     </div>
 </div>

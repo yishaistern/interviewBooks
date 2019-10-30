@@ -13,7 +13,18 @@
     background-color: #eee;
     border-bottom: 1px solid gray;
 }
-
+footer {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 100vw;
+    align-items: center;
+    z-index: 30;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+}
 .search-bar {
     height: 30px;
     position: sticky;

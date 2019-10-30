@@ -13,3 +13,6 @@
 <div class="wrap">
   <app-book *ngFor="let item of books" [book]="item" [isCart]="false"></app-book>
 </div>
+<footer>
+    <button type="button" class="btn btn-info" (click)="navToCart()">Go To Cart</button>
+</footer>

@@ -4,6 +4,7 @@ import { BooksManagmentService } from '../../services/books-managment.service';
 import { Book } from 'src/app/shared-objects/books-objects';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -17,13 +18,18 @@ export class SearchComponent implements OnInit {
   maxPages = 0;
   constructor(
     private userManage: UserManagmentService,
-    private bookManage: BooksManagmentService
+    private bookManage: BooksManagmentService,
+    private router: Router,
   ) { }
-
+  navToCart() {
+    this.router.navigate(['cart']);
+  }
   ngOnInit() {
     this.userName = this.userManage.getUserName();
   }
-
+  addToCart() {
+    
+  }
   changePage(num: number) {
     const current = this.num + num;
     if (current > 0 && current <= this.maxPages) {
